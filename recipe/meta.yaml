@@ -20,22 +20,27 @@ requirements:
   host:
     - python
     - pip
-
+    - setuptools
+    - wheel
   run:
     - python
     - six
     - python-dateutil
-    - elasticsearch >=6.0.0,<7.0.0
+    - elasticsearch >=7.0.0,<8.0.0
     - ipaddress  # [py<33]
 
 test:
   imports:
     - elasticsearch_dsl
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/elasticsearch/elasticsearch-dsl-py
   license_file: LICENSE
-  license: Apache 2.0
+  license: Apache-2.0
   license_family: Apache
   summary: Higher-level Python client for Elasticsearch
   dev_url: https://github.com/elasticsearch/elasticsearch-dsl-py
